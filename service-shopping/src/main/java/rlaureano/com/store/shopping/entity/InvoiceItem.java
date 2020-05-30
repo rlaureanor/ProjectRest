@@ -1,6 +1,7 @@
 package rlaureano.com.store.shopping.entity;
 
 import lombok.Data;
+import rlaureano.com.store.shopping.model.Product;
 
 import javax.persistence.*;
 import javax.validation.constraints.Positive;
@@ -23,6 +24,8 @@ public class InvoiceItem {
     @Transient
     private Double subTotal;
 
+    @Transient
+    private Product product;
 
     public Double getSubTotal(){
         if (this.price >0  && this.quantity >0 ){
